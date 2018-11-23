@@ -57,3 +57,10 @@ function dinerBreakfast() {
     console.log(order);
   };
 };
+
+let testFn = dinerBreakfast();
+console.log(testFn("toast"));
+console.log(testFn("oatmeal"));
+
+let newTestfn = dinerBreakfast();
+console.log(newTestfn("scopeeeee"));
