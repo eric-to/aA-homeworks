@@ -34,4 +34,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // adding new photos
+  const toggleForm = (e) => {
+    const photoForm = document.querySelector(".photo-form-container");
+    if (photoForm.className === "photo-form-container") {
+      photoForm.className = "photo-form-container hidden";
+    } else {
+      photoForm.className = "photo-form-container";
+    }
+  };
+
+  const showButton = document.querySelector(".photo-show-button");
+  showButton.addEventListener("click", toggleForm);
+
+  const addPhoto = (e) => {
+    e.preventDefault();
+
+    const urlInput = document.querySelector(".photo-url-input");
+    const photoUrl = urlInput.value;
+    urlInput.textContent = "";
+
+    const newPhoto = document.createElement("img");
+    newPhoto.src = photoUrl;
+
+    const newPhotoLi = document.createElement("li");
+    newPhotoLi.appendChild(newPhoto);
+
+    const dogPhotos = document.querySelector(".dog-photos");
+    dogPhotos.appendChild(newPhotoLi);
+  }
+
+  const submitPhotoBtn = document.querySelector(".photo-url-submit");
+  submitPhotoBtn.addEventListener("click", addPhoto);
+
 });
