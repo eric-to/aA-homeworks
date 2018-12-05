@@ -12,3 +12,4 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(GiphysSearch);
+// what does this return?? a react component?
