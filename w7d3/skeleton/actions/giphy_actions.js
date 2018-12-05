@@ -15,6 +15,7 @@ export const receiveSearchGiphys = giphys => {
 // We want this action creator to dispatch receiveSearchGiphys after the Giphy API call is successful.
 export const fetchSearchGiphys = searchTerm => dispatch => {
   return APIUtil.fetchSearchGiphys(searchTerm).then(giphys => {
-    receiveSearchGiphys(giphys.data);
-  }) 
+    dispatch(receiveSearchGiphys(giphys.data))
+  }); 
 };
+// never forget to use dispatch above^ to dispatch the action
